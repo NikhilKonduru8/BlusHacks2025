@@ -1,0 +1,327 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     16521,        319]
+NotebookOptionsPosition[     15594,        294]
+NotebookOutlinePosition[     15990,        310]
+CellTagsIndexPosition[     15947,        307]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"df", " ", "=", " ", 
+  RowBox[{"Import", "[", 
+   RowBox[{"\"\</Users/arnavgarg/Documents/reviews.csv\>\"", ",", 
+    " ", "\"\<Grid\>\""}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.95174966004425*^9, 3.951749663065962*^9}, 
+   3.9517498193038797`*^9, {3.951749861752696*^9, 3.95174991110207*^9}, {
+   3.951749953380069*^9, 3.95174995376087*^9}, 3.951750068080082*^9, 
+   3.9517501888927402`*^9, {3.951750220839981*^9, 3.951750222298133*^9}, {
+   3.951750590940886*^9, 3.951750595470827*^9}, {3.95175063721697*^9, 
+   3.951750637852543*^9}, {3.9517508297198668`*^9, 3.9517508855658283`*^9}, {
+   3.951751048978712*^9, 3.951751049217021*^9}, {3.951751185676976*^9, 
+   3.9517511892176237`*^9}, {3.951751240826312*^9, 3.951751259595492*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"6956ff50-926d-4066-bf25-030ca225eaa2"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Ethan Thompson\"\>", "\<\"Great haircut, friendly staff, clean \
+shop.\"\>"},
+    {"\<\"Olivia Davis\"\>", "\<\"Bad experience. Uneven cut and poor \
+service.\"\>"},
+    {"\<\"Noah Wilson\"\>", "\<\"Good service, but the prices are a bit high.\
+\"\>"},
+    {"\<\"Sophia Garcia\"\>", "\<\"Best haircut I've ever had! Highly \
+recommend Fresh Cuts.\"\>"},
+    {"\<\"James Rodriguez\"\>", "\<\"Barber was rushed and didn't pay \
+attention to details.\"\>"},
+    {"\<\"Isabella Williams\"\>", "\<\"Excellent service and friendly staff. \
+Will be back.\"\>"},
+    {"\<\"Benjamin Garcia\"\>", "\<\"Shop was dirty and the equipment was \
+old.\"\>"},
+    {"\<\"Mia Rodriguez\"\>", "\<\"Amazing experience. Professional and \
+skilled barbers.\"\>"},
+    {"\<\"William Thompson\"\>", "\<\"They messed up my beard trim. Very \
+disappointed.\"\>"},
+    {"\<\"Ava Davis\"\>", "\<\"Friendly atmosphere and great haircut. Love \
+this place.\"\>"},
+    {"\<\"Alexander Wilson\"\>", "\<\"The waiting time was too long. \
+Unacceptable.\"\>"},
+    {"\<\"Chloe Garcia\"\>", "\<\"Love my new hairstyle! Thanks, Fresh \
+Cuts!\"\>"},
+    {"\<\"Daniel Rodriguez\"\>", "\<\"My hair looks terrible. I'm so unhappy \
+with the result.\"\>"},
+    {"\<\"Emily Williams\"\>", "\<\"Great value for the price. Highly \
+satisfied customer.\"\>"},
+    {"\<\"David Garcia\"\>", "\<\"The barber was unprofessional and made \
+inappropriate comments.\"\>"},
+    {"\<\"Abigail Rodriguez\"\>", "\<\"Perfect haircut every time. Highly \
+recommended barber shop.\"\>"},
+    {"\<\"Joseph Thompson\"\>", "\<\"The shop was too crowded and noisy. Not \
+relaxing at all.\"\>"},
+    {"\<\"Madison Davis\"\>", "\<\"Amazing service and friendly staff. Best \
+barbers in town.\"\>"},
+    {"\<\"Michael Wilson\"\>", "\<\"They cut my hair way too short. I'm very \
+upset and unhappy.\"\>"},
+    {"\<\"Elizabeth Garcia\"\>", "\<\"Best barbershop in town! Excellent \
+service. 5 stars!\"\>"},
+    {"\<\"Christopher Rodriguez\"\>", "\<\"The equipment was broken, and they \
+didn't even apologize.\"\>"},
+    {"\<\"Natalie Williams\"\>", "\<\"Fantastic haircut and friendly \
+atmosphere. I felt welcomed.\"\>"},
+    {"\<\"Andrew Garcia\"\>", "\<\"They didn't listen to my requests at all. \
+Very bad experience.\"\>"},
+    {"\<\"Samantha Rodriguez\"\>", "\<\"Great service and reasonable prices. \
+Will return soon.\"\>"},
+    {"\<\"Ryan Thompson\"\>", "\<\"My hair looks like a disaster. Avoid this \
+place at all costs.\"\>"},
+    {"\<\"Jessica Davis\"\>", "\<\"Love my new look! Thanks to Fresh Cuts for \
+the great work.\"\>"},
+    {"\<\"Matthew Wilson\"\>", "\<\"The barber was inexperienced and unsure \
+of what to do.\"\>"},
+    {"\<\"Ashley Garcia\"\>", "\<\"Excellent haircut and friendly staff. My \
+new go-to place.\"\>"},
+    {"\<\"Nicholas Rodriguez\"\>", "\<\"The shop was disorganized and \
+chaotic. Needs improvement.\"\>"},
+    {"\<\"Kayla Williams\"\>", "\<\"Amazing service and great attention to \
+detail. Highly recommend.\"\>"},
+    {"\<\"Brandon Garcia\"\>", "\<\"They gave me a completely different \
+haircut than I asked for.\"\>"},
+    {"\<\"Lauren Rodriguez\"\>", "\<\"Best barbershop ever! Highly recommend \
+this place to everyone.\"\>"},
+    {"\<\"Justin Thompson\"\>", "\<\"The barber was rude and disrespectful. \
+Will not be returning.\"\>"},
+    {"\<\"Sarah Davis\"\>", "\<\"Love my haircut! Will definitely be back to \
+Fresh Cuts.\"\>"},
+    {"\<\"Tyler Wilson\"\>", "\<\"They overcharged me for a simple trim. Felt \
+ripped off.\"\>"},
+    {"\<\"Nicole Garcia\"\>", "\<\"Great service and friendly atmosphere. I \
+enjoyed my visit.\"\>"},
+    {"\<\"Dylan Rodriguez\"\>", "\<\"My hair looks awful. I'm so disappointed \
+and frustrated.\"\>"},
+    {"\<\"Hannah Williams\"\>", "\<\"Excellent service and reasonable prices. \
+Very satisfied.\"\>"},
+    {"\<\"Kevin Garcia\"\>", "\<\"The barber was unprofessional and careless. \
+Not a good experience.\"\>"},
+    {"\<\"Alexis Rodriguez\"\>", "\<\"Perfect haircut every time. Highly \
+recommended. Best in the city.\"\>"},
+    {"\<\"Austin Thompson\"\>", "\<\"The shop was dirty and uninviting. Needs \
+a major cleanup.\"\>"},
+    {"\<\"Megan Davis\"\>", "\<\"Amazing service and friendly staff. They \
+made me feel comfortable.\"\>"},
+    {"\<\"Zachary Wilson\"\>", "\<\"They messed up my hair. Never going back \
+to Fresh Cuts again.\"\>"},
+    {"\<\"Brianna Garcia\"\>", "\<\"Best barbershop in town! Excellent \
+service. I'm a regular now.\"\>"},
+    {"\<\"Cody Rodriguez\"\>", "\<\"The equipment was broken, and they didn't \
+seem to care at all.\"\>"},
+    {"\<\"Hailey Williams\"\>", "\<\"Fantastic haircut and friendly \
+atmosphere. I'm very happy.\"\>"},
+    {"\<\"Jacob Garcia\"\>", "\<\"They didn't listen to my requests. Very bad \
+experience overall.\"\>"},
+    {"\<\"Rachel Rodriguez\"\>", "\<\"Great service and reasonable prices. \
+I'll be back for sure.\"\>"},
+    {"\<\"Nathan Thompson\"\>", "\<\"My hair looks like a disaster. Avoid \
+this place like the plague.\"\>"},
+    {"\<\"Kaylee Davis\"\>", "\<\"Love my new look! Thanks, Fresh Cuts, for \
+the amazing job.\"\>"},
+    {"\<\"Alexander Martinez\"\>", "\<\"Good haircut, shop could be \
+cleaner.\"\>"},
+    {"\<\"Isabella Hernandez\"\>", "\<\"Bad experience. Barber was on their \
+phone.\"\>"},
+    {"\<\"Ethan Garcia\"\>", "\<\"Great service, but a bit slow.\"\>"},
+    {"\<\"Olivia Rodriguez\"\>", "\<\"Best haircut I've had. Shop is very \
+modern.\"\>"},
+    {"\<\"Noah Perez\"\>", "\<\"Rushed haircut, uneven length.\"\>"},
+    {"\<\"Sophia Lopez\"\>", "\<\"Excellent service, friendly staff.\"\>"},
+    {"\<\"James Martinez\"\>", "\<\"Dirty shop, wouldn't recommend.\"\>"},
+    {"\<\"Ava Hernandez\"\>", "\<\"Amazing experience, great attention to \
+detail.\"\>"},
+    {"\<\"William Garcia\"\>", "\<\"Beard trim was poorly done.\"\>"},
+    {"\<\"Mia Rodriguez\"\>", "\<\"Friendly atmosphere, good prices.\"\>"},
+    {"\<\"Benjamin Perez\"\>", "\<\"Long wait time, not organized.\"\>"},
+    {"\<\"Chloe Lopez\"\>", "\<\"Love my new style!\"\>"},
+    {"\<\"Daniel Martinez\"\>", "\<\"Haircut was too short, unhappy.\"\>"},
+    {"\<\"Emily Hernandez\"\>", "\<\"Great value, very happy.\"\>"},
+    {"\<\"David Garcia\"\>", "\<\"Unprofessional barber, bad attitude.\"\>"},
+    {"\<\"Abigail Rodriguez\"\>", "\<\"Perfect haircut every time.\"\>"},
+    {"\<\"Joseph Perez\"\>", "\<\"Noisy shop, hard to relax.\"\>"},
+    {"\<\"Madison Lopez\"\>", "\<\"Amazing service, friendly staff.\"\>"},
+    {"\<\"Michael Martinez\"\>", "\<\"Completely wrong haircut.\"\>"},
+    {"\<\"Elizabeth Hernandez\"\>", "\<\"Best shop in town!\"\>"},
+    {"\<\"Christopher Garcia\"\>", "\<\"Broken equipment, no apology.\"\>"},
+    {"\<\"Natalie Rodriguez\"\>", "\<\"Fantastic haircut, welcoming \
+atmosphere.\"\>"},
+    {"\<\"Andrew Perez\"\>", "\<\"Didn't listen to instructions.\"\>"},
+    {"\<\"Samantha Lopez\"\>", "\<\"Great service, fair prices.\"\>"},
+    {"\<\"Ryan Martinez\"\>", "\<\"Hair looks terrible, avoid!\"\>"},
+    {"\<\"Jessica Hernandez\"\>", "\<\"Love my new look!\"\>"},
+    {"\<\"Matthew Garcia\"\>", "\<\"Inexperienced barber.\"\>"},
+    {"\<\"Ashley Rodriguez\"\>", "\<\"Excellent haircut, friendly staff.\"\>"},
+    {"\<\"Nicholas Perez\"\>", "\<\"Disorganized shop.\"\>"},
+    {"\<\"Kayla Lopez\"\>", "\<\"Amazing service, great detail.\"\>"},
+    {"\<\"Brandon Martinez\"\>", "\<\"Wrong haircut given.\"\>"},
+    {"\<\"Lauren Hernandez\"\>", "\<\"Best shop ever!\"\>"},
+    {"\<\"Justin Garcia\"\>", "\<\"Rude barber.\"\>"},
+    {"\<\"Sarah Rodriguez\"\>", "\<\"Love my haircut!\"\>"},
+    {"\<\"Tyler Perez\"\>", "\<\"Overcharged for a trim.\"\>"},
+    {"\<\"Nicole Lopez\"\>", "\<\"Great service, friendly place.\"\>"},
+    {"\<\"Dylan Martinez\"\>", "\<\"Hair looks awful.\"\>"},
+    {"\<\"Hannah Hernandez\"\>", "\<\"Excellent service, good prices.\"\>"},
+    {"\<\"Kevin Garcia\"\>", "\<\"Unprofessional and careless.\"\>"},
+    {"\<\"Alexis Rodriguez\"\>", "\<\"Perfect haircut every time!\"\>"},
+    {"\<\"Austin Perez\"\>", "\<\"Dirty and unwelcoming.\"\>"},
+    {"\<\"Megan Lopez\"\>", "\<\"Amazing service, made me comfortable.\"\>"},
+    {"\<\"Zachary Martinez\"\>", "\<\"Messed up my hair.\"\>"},
+    {"\<\"Brianna Hernandez\"\>", "\<\"Best shop in town!\"\>"},
+    {"\<\"Cody Garcia\"\>", "\<\"Broken equipment, didn't care.\"\>"},
+    {"\<\"Hailey Rodriguez\"\>", "\<\"Fantastic haircut!\"\>"},
+    {"\<\"Jacob Perez\"\>", "\<\"Didn't listen to me.\"\>"},
+    {"\<\"Rachel Lopez\"\>", "\<\"Great service, will be back.\"\>"},
+    {"\<\"Nathan Martinez\"\>", "\<\"Hair is a disaster.\"\>"},
+    {"\<\"Kaylee Hernandez\"\>", "\<\"Love my new look!\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.951749821558982*^9, {3.951749864061508*^9, 3.9517499113401737`*^9}, {
+   3.9517499543052607`*^9, 3.951749957450737*^9}, 3.9517500949372663`*^9, 
+   3.951750189137932*^9, 3.951750222598096*^9, 3.951750403335711*^9, {
+   3.951750592471167*^9, 3.9517505958814487`*^9}, 3.951750638086578*^9, 
+   3.951750767959305*^9, 3.951750830290373*^9, {3.951750867142981*^9, 
+   3.951750885815064*^9}, 3.9517510495337963`*^9, 3.9517511895799627`*^9, {
+   3.951751248976406*^9, 3.951751259960033*^9}, {3.9517524563081827`*^9, 
+   3.951752470861834*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"b234f001-e2de-4608-88d7-cba3b9f785eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sentiments", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Classify", "[", 
+     RowBox[{"\"\<Sentiment\>\"", ",", " ", 
+      RowBox[{"ToString", "[", 
+       RowBox[{
+        RowBox[{"df", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", " ", "index"}], "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"index", ",", " ", "1", ",", " ", "100", ",", " ", "1"}], 
+     "}"}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.9517517010969753`*^9, 3.951751710567264*^9}, {
+   3.95175174849719*^9, 3.9517517871420593`*^9}, 3.951751904001087*^9, {
+   3.9517526704519863`*^9, 3.951752711889958*^9}, {3.951752926943614*^9, 
+   3.9517529365604677`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"9dd10bc9-0e12-4100-bd22-7f86ca81d141"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Neutral\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Neutral\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Neutral\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Neutral\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Neutral\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"Positive\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.951749526620829*^9, 3.9517495277419147`*^9}, {
+   3.951751525152866*^9, 3.951751537415889*^9}, {3.9517515680487432`*^9, 
+   3.951751624230691*^9}, 3.9517524707856083`*^9, {3.951752708449892*^9, 
+   3.951752712322329*^9}, 3.951752936979178*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"3c369f4b-a9d1-41f0-92a6-870b1ae322e4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\</Users/arnavgarg/Downloads/sentiments.csv\>\"", ",", " ", 
+   "sentiments"}], "]"}]], "Code",
+ CellChangeTimes->{{3.9517530499258223`*^9, 3.951753051263473*^9}, {
+  3.951753105333198*^9, 3.951753110322316*^9}, {3.951753209873801*^9, 
+  3.951753237910883*^9}, {3.951753272712805*^9, 3.951753314490856*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"ff17fdfe-e4b7-4b6a-a1de-f9fd5c741398"],
+
+Cell[BoxData["\<\"/Users/arnavgarg/Downloads/sentiments.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.951753051470415*^9, 3.951753112063779*^9, {3.9517532256756573`*^9, 
+   3.951753238594173*^9}, 3.9517533147939787`*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"cf5327b0-23f0-4a87-9460-b983a79025d7"]
+}, Open  ]]
+},
+WindowSize->{1512, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6ce96a92-a0a7-4521-918a-28768538d345"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 841, 13, 51, "Code",ExpressionUUID->"6956ff50-926d-4066-bf25-030ca225eaa2"],
+Cell[1420, 37, 9477, 170, 1746, "Output",ExpressionUUID->"b234f001-e2de-4608-88d7-cba3b9f785eb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10934, 212, 840, 19, 51, "Code",ExpressionUUID->"9dd10bc9-0e12-4100-bd22-7f86ca81d141"],
+Cell[11777, 233, 3025, 40, 135, "Output",ExpressionUUID->"3c369f4b-a9d1-41f0-92a6-870b1ae322e4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14839, 278, 438, 7, 51, "Code",ExpressionUUID->"ff17fdfe-e4b7-4b6a-a1de-f9fd5c741398"],
+Cell[15280, 287, 298, 4, 33, "Output",ExpressionUUID->"cf5327b0-23f0-4a87-9460-b983a79025d7"]
+}, Open  ]]
+}
+]
+*)
+

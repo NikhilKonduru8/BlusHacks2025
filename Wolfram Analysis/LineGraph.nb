@@ -1,0 +1,925 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     34715,        917]
+NotebookOptionsPosition[     32899,        876]
+NotebookOutlinePosition[     33295,        892]
+CellTagsIndexPosition[     33252,        889]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"df", " ", "=", " ", 
+  RowBox[{"Import", "[", 
+   RowBox[{"\"\</Users/arnavgarg/Downloads/yby_sentiments.csv\>\"", ",", 
+    " ", "\"\<Grid\>\""}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.951760821220409*^9, 3.9517608814225817`*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"fea90e52-2e7a-4920-9f67-f3bd17bc657a"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Sentiment\"\>", "\<\"Year\"\>"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Neutral\"\>", "2025"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Neutral\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Neutral\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Neutral\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Neutral\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2025"},
+    {"\<\"Positive\"\>", "2024"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2025"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2024"},
+    {"\<\"Positive\"\>", "2023"},
+    {"\<\"Negative\"\>", "2023"},
+    {"\<\"Positive\"\>", "2024"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.951760835474938*^9, 3.951760849086722*^9}, 
+   3.95176088189734*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"a3fe0f62-bc73-4e5c-ac77-f33b6482124c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"df", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", " ", "2"}], "]"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Code",
+ CellChangeTimes->{{3.951761317291768*^9, 3.9517613233676643`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"3e4736a5-4f6f-4a92-b338-2b8259edd7ed"],
+
+Cell[BoxData["\<\"Positive\"\>"], "Output",
+ CellChangeTimes->{{3.951761318689884*^9, 3.951761323758388*^9}},
+ CellLabel->"Out[67]=",ExpressionUUID->"d86a165e-0a26-4a87-9db1-6f1c1961a35e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"positive", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral", " ", "=", " ", "0"}], ";"}], "\n", "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", "\n", "  ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"sentiment", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"sentiment", " ", "===", " ", "\"\<Positive\>\""}], ",", " ", 
+        
+        RowBox[{"positive", "++"}], ",", "\n", "    ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"sentiment", " ", "===", " ", "\"\<Negative\>\""}], ",", 
+          " ", 
+          RowBox[{"negative", "++"}], ",", "\n", "      ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"sentiment", " ", "===", " ", "\"\<Neutral\>\""}], ",", 
+            " ", 
+            RowBox[{"neutral", "++"}]}], "]"}]}], "]"}]}], "]"}]}], ",", "\n",
+      "  ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "1", ",", " ", "101"}], "}"}]}], "\n", "]"}], 
+   ";"}], "\n", "\n"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"{", 
+   RowBox[{"positive", ",", " ", "negative", ",", " ", "neutral"}], "}"}], 
+  "]"}]}], "Code",
+ CellChangeTimes->{{3.951760910330245*^9, 3.951760911487998*^9}, {
+  3.951760985283033*^9, 3.951761279878984*^9}, {3.95176132599368*^9, 
+  3.951761332573533*^9}, {3.951761387765471*^9, 3.951761410951888*^9}, {
+  3.9517614490713663`*^9, 3.9517614637979794`*^9}, {3.9517661095093718`*^9, 
+  3.951766126530262*^9}},
+ CellLabel->
+  "In[262]:=",ExpressionUUID->"988bc58a-2ac7-4af7-b1cc-7b93967d621b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"47", ",", "48", ",", "5"}], "}"}]], "Print",
+ CellChangeTimes->{3.951766127181535*^9},
+ CellLabel->
+  "During evaluation of \
+In[262]:=",ExpressionUUID->"3858b733-1130-4835-9f82-019e8ffd43a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"positive2023", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2023", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2023", " ", "=", " ", "0"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", "\n", "  ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"sentiment", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"year", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"year", " ", "===", " ", "2023"}], ",", "\n", "  ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"sentiment", " ", "===", " ", "\"\<Positive\>\""}], ",", 
+          " ", 
+          RowBox[{"positive2023", "++"}], ",", "\n", "    ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"sentiment", " ", "===", " ", "\"\<Negative\>\""}], ",", 
+            " ", 
+            RowBox[{"negative2023", "++"}], ",", "\n", "      ", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"sentiment", " ", "===", " ", "\"\<Neutral\>\""}], ",", 
+              " ", 
+              RowBox[{"neutral2023", "++"}]}], "]"}]}], "]"}]}], "]"}]}], 
+       "]"}]}], ",", "\n", "  ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "2", ",", " ", "100"}], "}"}]}], "\n", "]"}], 
+   ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"total2023", " ", "=", " ", 
+   RowBox[{
+   "positive2023", " ", "+", " ", "negative2023", " ", "+", " ", 
+    "neutral2023"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"positive2023", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"positive2023", "/", "total2023"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2023", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"negative2023", "/", "total2023"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2023", " ", "=", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"neutral2023", "/", "total2023"}], "*", "100"}], "]"}]}], ";"}],
+   "\n"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "positive2023", ",", " ", "negative2023", ",", " ", "neutral2023", ",", 
+    " ", "total2023"}], "}"}], "]"}]}], "Code",
+ CellChangeTimes->{{3.9517612900529222`*^9, 3.951761297061598*^9}, {
+   3.951761341610662*^9, 3.951761343395974*^9}, {3.951761470091709*^9, 
+   3.95176157849479*^9}, {3.9517616199904337`*^9, 3.95176164994689*^9}, {
+   3.951761713230442*^9, 3.951761724235324*^9}, 3.951761886028741*^9, {
+   3.951762036906814*^9, 3.951762048252667*^9}, {3.951762201187763*^9, 
+   3.951762203149693*^9}, {3.951766129832255*^9, 3.9517661354538507`*^9}},
+ CellLabel->
+  "In[276]:=",ExpressionUUID->"949cdde7-7d78-4d74-a431-4f6b1da484d5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "52.63157894736842`", ",", "44.73684210526316`", ",", "2.6315789473684212`",
+    ",", "38"}], "}"}]], "Print",
+ CellChangeTimes->{{3.951766132459859*^9, 3.951766135918641*^9}},
+ CellLabel->
+  "During evaluation of \
+In[276]:=",ExpressionUUID->"8ebc7176-e7fa-4eac-bae9-3d95aeb45217"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"positive2024", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2024", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2024", " ", "=", " ", "0"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", "\n", "  ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"sentiment", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"year", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"year", " ", "===", " ", "2024"}], ",", "\n", "  ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"sentiment", " ", "===", " ", "\"\<Positive\>\""}], ",", 
+          " ", 
+          RowBox[{"positive2024", "++"}], ",", "\n", "    ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"sentiment", " ", "===", " ", "\"\<Negative\>\""}], ",", 
+            " ", 
+            RowBox[{"negative2024", "++"}], ",", "\n", "      ", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"sentiment", " ", "===", " ", "\"\<Neutral\>\""}], ",", 
+              " ", 
+              RowBox[{"neutral2024", "++"}]}], "]"}]}], "]"}]}], "]"}]}], 
+       "]"}]}], ",", "\n", "  ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "2", ",", " ", "100"}], "}"}]}], "\n", "]"}], 
+   ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"total2024", " ", "=", " ", 
+   RowBox[{
+   "positive2024", " ", "+", " ", "negative2024", " ", "+", " ", 
+    "neutral2024"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"positive2024", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"positive2024", "/", "total2024"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2024", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"negative2024", "/", "total2024"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2024", " ", "=", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"neutral2024", "/", "total2024"}], "*", "100"}], "]"}]}], ";"}],
+   "\n"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "positive2024", ",", " ", "negative2024", ",", " ", "neutral2024", ",", 
+    " ", "total2024"}], "}"}], "]"}]}], "Code",
+ CellChangeTimes->{{3.951761663547957*^9, 3.951761729448825*^9}, 
+   3.9517618844617567`*^9, {3.95176200509851*^9, 3.951762029186878*^9}, {
+   3.951762528462555*^9, 3.951762529661496*^9}, {3.951766139348085*^9, 
+   3.9517661433157454`*^9}},
+ CellLabel->
+  "In[285]:=",ExpressionUUID->"88962af9-926b-42d5-b56f-00e8f12b1782"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "39.39393939393939`", ",", "57.57575757575758`", ",", "3.0303030303030303`",
+    ",", "33"}], "}"}]], "Print",
+ CellChangeTimes->{3.9517661435004597`*^9},
+ CellLabel->
+  "During evaluation of \
+In[285]:=",ExpressionUUID->"e12a5646-42d4-48a1-a909-3003837ee377"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"positive2025", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2025", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2025", " ", "=", " ", "0"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", "\n", "  ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"sentiment", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"year", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"df", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", " ", "x"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\n", "  ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"year", " ", "===", " ", "2025"}], ",", "\n", "  ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"sentiment", " ", "===", " ", "\"\<Positive\>\""}], ",", 
+          " ", 
+          RowBox[{"positive2025", "++"}], ",", "\n", "    ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"sentiment", " ", "===", " ", "\"\<Negative\>\""}], ",", 
+            " ", 
+            RowBox[{"negative2025", "++"}], ",", "\n", "      ", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"sentiment", " ", "===", " ", "\"\<Neutral\>\""}], ",", 
+              " ", 
+              RowBox[{"neutral2025", "++"}]}], "]"}]}], "]"}]}], "]"}]}], 
+       "]"}]}], ",", "\n", "  ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "2", ",", " ", "100"}], "}"}]}], "\n", "]"}], 
+   ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"total2025", " ", "=", " ", 
+   RowBox[{
+   "positive2025", " ", "+", " ", "negative2025", " ", "+", " ", 
+    "neutral2025"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"positive2025", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"positive2025", "/", "total2025"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"negative2025", " ", "=", " ", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"negative2025", "/", "total2025"}], "*", "100"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"neutral2025", " ", "=", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"neutral2025", "/", "total2025"}], "*", "100"}], "]"}]}], ";"}],
+   "\n", "\n", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Output", " ", "the", " ", "counts"}], " ", "*)"}]}], "\n", 
+ RowBox[{"{", 
+  RowBox[{
+  "positive2025", ",", " ", "negative2025", ",", " ", "neutral2025", ",", " ",
+    "total2025"}], "}"}]}], "Code",
+ CellChangeTimes->{{3.951761736825718*^9, 3.95176174493919*^9}, {
+  3.9517618593476143`*^9, 3.951761882834484*^9}, {3.951761914055151*^9, 
+  3.951761994686576*^9}, {3.9517625231660852`*^9, 3.951762524086028*^9}},
+ CellLabel->
+  "In[294]:=",ExpressionUUID->"9ff1cfea-bcd8-43f0-b26f-c769757003b4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "46.42857142857143`", ",", "42.857142857142854`", ",", 
+   "10.714285714285714`", ",", "28"}], "}"}]], "Output",
+ CellChangeTimes->{{3.951761875842066*^9, 3.951761888542506*^9}, {
+   3.9517619407260427`*^9, 3.951761954537878*^9}, 3.951761996095889*^9, 
+   3.9517625248588333`*^9, 3.9517661449840517`*^9},
+ CellLabel->
+  "Out[302]=",ExpressionUUID->"89e7a092-d1c9-47a9-8b23-8174f8ddef04"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot", " ", "=", " ", 
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"2023", ",", " ", "positive2023"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2024", ",", " ", "positive2024"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2025", ",", " ", "positive2025"}], "}"}]}], "}"}], ",", 
+       " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"2023", ",", " ", "negative2023"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2024", ",", " ", "negative2024"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2025", ",", " ", "negative2025"}], "}"}]}], "}"}], ",", 
+       " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"2023", ",", " ", "neutral2023"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2024", ",", " ", "neutral2024"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"2025", ",", " ", "neutral2025"}], "}"}]}], "}"}]}], "}"}], 
+     ",", " ", 
+     RowBox[{"PlotLabels", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Positive Percentage\>\"", ",", 
+        " ", "\"\<Negative Percentage\>\"", ",", 
+        " ", "\"\<Neutral Percentage\>\""}], "}"}]}], ",", " ", 
+     RowBox[{
+     "PlotLabel", 
+      "->", "\"\<Percentage of Positive, Negative, and Neutral Reviews\>\""}],
+      ",", " ", 
+     RowBox[{"AxesLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Percentage of Reviews (%)\>\"", ",", 
+        " ", "\"\<Year\>\""}], "}"}]}]}], "]"}]}], "\n"}]], "Code",
+ CellChangeTimes->{{3.951762363493863*^9, 3.9517625079653482`*^9}, {
+  3.9517625598721333`*^9, 3.951762560483304*^9}, {3.9517627781351023`*^9, 
+  3.9517627991603603`*^9}, {3.95176284229016*^9, 3.9517629176355658`*^9}},
+ CellLabel->
+  "In[303]:=",ExpressionUUID->"5ecc9bd7-006b-41e7-b13b-1850cfdf37d9"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    TagBox[
+     {RGBColor[0.24, 0.6, 0.8], PointSize[
+       NCache[
+        Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[2], 
+      LineBox[{{2023., 52.63157894736842}, {2024., 39.39393939393939}, {2025.,
+        46.42857142857143}}]},
+     Annotation[#, "Charting`Private`Tag#1"]& ], 
+    TagBox[
+     {RGBColor[0.95, 0.627, 0.1425], PointSize[
+       NCache[
+        Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[2], 
+      LineBox[{{2023., 44.73684210526316}, {2024., 57.57575757575758}, {2025.,
+        42.857142857142854`}}]},
+     Annotation[#, "Charting`Private`Tag#2"]& ], 
+    TagBox[
+     {RGBColor[0.455, 0.7, 0.21], PointSize[
+       NCache[
+        Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[2], 
+      LineBox[{{2023., 2.6315789473684212`}, {2024., 3.0303030303030303`}, {
+       2025., 10.714285714285714`}}]},
+     Annotation[#, "Charting`Private`Tag#3"]& ]}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 46.42857142857143}], 
+            Offset[{2.7222826793788855`, 1.2606256436998724`}, {
+             2025.0833680555554`, 46.42857142857143}], 
+            Offset[{0, 0}, {2025.1377949345624`, 47.57860048080003}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             47.57860048080003}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 46.42857142857143}], 
+            Offset[{2.7222826793788855`, 1.2606256436998724`}, {
+             2025.0833680555554`, 46.42857142857143}], 
+            Offset[{0, 0}, {2025.1377949345624`, 47.57860048080003}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             47.57860048080003}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{104., 7.000000000000023}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{104., -6.999999999999977}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., -6.999999999999998}, {2025.1377949345624`, 
+             47.57860048080003}], 
+            Offset[{10., 7.000000000000002}, {2025.1377949345624`, 
+             47.57860048080003}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Positive Percentage\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{57., 1.2656542480726785*^-14}, \
+{2025.1377949345624, 47.57860048080003}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 42.857142857142854`}], 
+            Offset[{2.7222826610999635`, -1.2606256831726461`}, {
+             2025.0833680555554`, 42.857142857142854`}], 
+            Offset[{0, 0}, {2025.1377949345624`, 41.70711376118256}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             41.70711376118256}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 42.857142857142854`}], 
+            Offset[{2.7222826610999635`, -1.2606256831726461`}, {
+             2025.0833680555554`, 42.857142857142854`}], 
+            Offset[{0, 0}, {2025.1377949345624`, 41.70711376118256}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             41.70711376118256}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{109., 7.000000000000024}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{109., -6.999999999999976}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., -6.999999999999997}, {2025.1377949345624`, 
+             41.70711376118256}], 
+            Offset[{10., 7.000000000000003}, {2025.1377949345624`, 
+             41.70711376118256}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Negative Percentage\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{59.5, 1.3211653993039363*^-14}, \
+{2025.1377949345624, 41.70711376118256}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 10.714285714285714`}], 
+            Offset[{2.999999999999993, 2.1043028747659865`*^-7}, {
+             2025.0833680555554`, 10.714285714285714`}], 
+            Offset[{0, 0}, {2025.1377949345624`, 10.714285888483603`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {2025., 10.714285714285714`}], 
+            Offset[{2.999999999999993, 2.1043028747659865`*^-7}, {
+             2025.0833680555554`, 10.714285714285714`}], 
+            Offset[{0, 0}, {2025.1377949345624`, 10.714285888483603`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., 2.220446049250313*^-15}, {2025.1377949345624`, 
+             10.714285888483603`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{102., 7.000000000000023}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{102., -6.999999999999977}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., -6.999999999999998}, {2025.1377949345624`, 
+             10.714285888483603`}], 
+            Offset[{10., 7.000000000000002}, {2025.1377949345624`, 
+             10.714285888483603`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Neutral Percentage\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{56., 1.2434497875801753*^-14}, \
+{2025.1377949345624, 10.714285888483603}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["\"Percentage of Reviews (%)\"", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["\"Year\"", HoldForm], TraditionalForm]},
+  AxesOrigin->{2022.958333333338, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->{{All, 129.79690274736987`}, {All, All}},
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.24, 0.6, 0.8], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.95, 0.627, 0.1425], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.455, 0.7, 0.21], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.578, 0.51, 0.85], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.4, 0.64, 1.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[1., 0.75, 0.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.8, 0.4, 0.76], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.637, 0.65, 0.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+    "RangePadding" -> Scaled[0.05], "OptimizePlotMarkers" -> True, 
+    "IncludeHighlighting" -> "CurrentSet", "HighlightStyle" -> Automatic, 
+    "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Percentage of Positive, Negative, and Neutral Reviews\"", 
+    TraditionalForm],
+  PlotRange->{{2022.958333333338, 2025.}, {0, 57.57575757575758}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.08090169943749476]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.951762465827819*^9, {3.951762508523011*^9, 3.951762560872004*^9}, 
+   3.95176280131853*^9, {3.95176287984394*^9, 3.95176288567754*^9}, 
+   3.951762919758566*^9, 3.951766146681068*^9},
+ CellLabel->
+  "Out[303]=",ExpressionUUID->"28c80947-db02-40ef-99a1-714dd542d47e"]
+}, Open  ]]
+},
+WindowSize->{1512, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a6383b99-def4-44e1-b655-12302f2be547"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 336, 6, 51, "Code",ExpressionUUID->"fea90e52-2e7a-4920-9f67-f3bd17bc657a"],
+Cell[915, 30, 3764, 109, 1756, "Output",ExpressionUUID->"a3fe0f62-bc73-4e5c-ac77-f33b6482124c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4716, 144, 363, 9, 51, "Code",ExpressionUUID->"3e4736a5-4f6f-4a92-b338-2b8259edd7ed"],
+Cell[5082, 155, 188, 2, 33, "Output",ExpressionUUID->"d86a165e-0a26-4a87-9db1-6f1c1961a35e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5307, 162, 1903, 50, 315, "Code",ExpressionUUID->"988bc58a-2ac7-4af7-b1cc-7b93967d621b"],
+Cell[7213, 214, 232, 6, 23, "Print",ExpressionUUID->"3858b733-1130-4835-9f82-019e8ffd43a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7482, 225, 3236, 87, 409, "Code",ExpressionUUID->"949cdde7-7d78-4d74-a431-4f6b1da484d5"],
+Cell[10721, 314, 324, 8, 23, "Print",ExpressionUUID->"8ebc7176-e7fa-4eac-bae9-3d95aeb45217"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11082, 327, 3043, 85, 409, "Code",ExpressionUUID->"88962af9-926b-42d5-b56f-00e8f12b1782"],
+Cell[14128, 414, 302, 8, 23, "Print",ExpressionUUID->"e12a5646-42d4-48a1-a909-3003837ee377"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14467, 427, 3072, 85, 428, "Code",ExpressionUUID->"9ff1cfea-bcd8-43f0-b26f-c769757003b4"],
+Cell[17542, 514, 429, 9, 33, "Output",ExpressionUUID->"89e7a092-d1c9-47a9-8b23-8174f8ddef04"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18008, 528, 2002, 51, 69, "Code",ExpressionUUID->"5ecc9bd7-006b-41e7-b13b-1850cfdf37d9"],
+Cell[20013, 581, 12870, 292, 164, "Output",ExpressionUUID->"28c80947-db02-40ef-99a1-714dd542d47e"]
+}, Open  ]]
+}
+]
+*)
+
